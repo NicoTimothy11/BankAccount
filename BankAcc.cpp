@@ -1,13 +1,13 @@
 #include <iostream>
-#include <string>
 
 using namespace std;
 
 class Account {
 public:
+	virtual void VirtualFunc() {
+		cout << "Lol" << endl;
+	}
+	virtual void ShowInfo() 
 };
-
-class SavingsAcct : public Account {};
-class CheckingAcct : public Account {};
 
 int main() {}
