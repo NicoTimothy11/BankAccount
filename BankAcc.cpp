@@ -4,10 +4,28 @@ using namespace std;
 
 class Account {
 public:
-	virtual void VirtualFunc() {
-		cout << "Lol" << endl;
-	}
-	virtual void ShowInfo() 
+	virtual void VirtualFunc() = 0;
 };
 
-int main() {}
+class Savings : public Account {
+public:
+	void VirtualFunc() override {
+		cout << "Withdraw" << endl;
+	}
+};
+
+class Checkings : public Account {
+public:
+	void VirtualFunc() override {
+		cout << "Chequess" << endl;
+	}
+};
+
+int main() {
+	Savings Nico;
+
+	Savings* SavePtr = &Nico;
+	SavePtr -> VirtualFunc();
+	return 0;
+}
+
