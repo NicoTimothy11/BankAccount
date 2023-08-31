@@ -12,12 +12,22 @@ public:
 };
 
 class Savings : public Account {
+private:
+	string AccName;
+	string AccNum;
+	int balance;
 public:
+	Savings(string AccName, string AccNum, int balance) {
+		this->AccName = AccName;
+		this->AccNum = AccNum;
+		this->balance = balance;
+	}
+
 	void VirtualFunc() override {
-		cout << "Withdraw" << endl;
+		cout << "Withdraw: " << balance << endl;
 	}
 	void ShowInfo() override {
-		cout << "Savings Account Name: " << endl;
+		cout << "Savings Account Name: " << AccName << endl;
 	}
 };
 
@@ -32,7 +42,7 @@ public:
 };
 
 int main() {
-	Savings Nico;
+	Savings Nico("Nico Babaylan", "12345", 2000);
 
 	Savings* SavePtr = &Nico;
 	SavePtr -> VirtualFunc();
